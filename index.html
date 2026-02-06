@@ -98,8 +98,9 @@ let fireworks = [];
 // Animation loop
 function animate() {
     requestAnimationFrame(animate);
+    
     ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'; // trail effect
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     fireworks.forEach((fw, i) => {
         fw.update();
@@ -121,6 +122,7 @@ setInterval(() => {
 canvas.addEventListener('click', e => {
     fireworks.push(new Firework(e.clientX, e.clientY));
 });
+
 
 animate();
 </script>
